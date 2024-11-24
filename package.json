@@ -65,7 +65,7 @@
     "wrangler": "2.20.2"
   },
   "volta": {
-    "node": "20.12.2",
+    "node": "18.x",
     "pnpm": "8.15.8"
   },
   "dependencies": {
