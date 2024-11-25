@@ -50,4 +50,4 @@ pnpm start
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [sdk](/packages/swap-sdk)                | An SDK for building applications on top of Pancakeswap                                                      |
 | [swap-sdk-core](/packages/swap-sdk-core) | Swap SDK Shared code                                                                                        |
-| [wagmi](/packages/wagmi)                 | Extension for [wagmi](https://github.com/wagmi-dev/wagmi), including bsc chain and binance wallet connector |
+| [wagmi](/packages/wagmi)                 | Extension for [wagmi](https://github.com/wagmi-dev/wagmi), includin bsc chain and binance wallet connector |
