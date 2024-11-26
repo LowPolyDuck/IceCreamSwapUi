@@ -41,5 +41,5 @@ export const bob: IceChain = {
     initCodeHash: "0x246ba35fa37fb6bf3b71cd68dd22514e93a5d804976bfd9895b26b4434adb34d",
     routerAddress: "0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3",
   },
-  smartRouterAddress: '0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3',
+  smartRouterAddress: '0xf7458e9De34a2B34B48866336F48123F6dE4d303',
 }
