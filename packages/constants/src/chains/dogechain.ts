@@ -1,6 +1,6 @@
 import IceChain from '../ice-chain'
 
-export const bob: IceChain = {
+export const dogechain: IceChain = {
   id: 31611,
   name: 'MEZO',
   features: ['swap'],
