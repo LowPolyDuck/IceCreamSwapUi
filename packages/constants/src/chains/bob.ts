@@ -31,10 +31,10 @@ export const bob: IceChain = {
     name: 'Wrapped Test BTC',
   },
   stableToken: {
-    address: '0x05D032ac25d322df992303dCa074EE7392C117b9',
+    address: '0xC2d002e83016Ce8e9BB58ff8A006128B7C6c058e',
     decimals: 18,
-    symbol: 'USDT',
-    name: 'Tether USD',
+    symbol: 'LIMPETH',
+    name: 'ETH PUMP, BTC DUMP',
   },
   swap: {
     factoryAddress: "0xB27fEFF52c463602aA9d939dc090B46439134119",
