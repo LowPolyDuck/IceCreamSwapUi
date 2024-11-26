@@ -1,34 +1,35 @@
+import { FACTORY_ADDRESS, INIT_CODE_HASH, ROUTER_ADDRESS } from "../common/swap";
 import IceChain from '../ice-chain'
 
 export const dogechain: IceChain = {
   id: 31611,
-  name: 'Mezo',
+  name: 'Dogechain Mainnet',
   features: ['swap'],
-  network: 'mezo',
+  network: 'dogechain',
   rpcUrls: {
-    public: { http: ['https://rpc.test.mezo.org'] },
-    default: { http: ['https://rpc.test.mezo.org'] },
+    public: { http: ['https://rpc.dogechain.dog'] },
+    default: { http: ['https://rpc.dogechain.dog'] },
   },
   blockExplorers: {
-    default: { name: 'Mezo Explorer', url: 'https://explorer.test.mezo.org' },
+    default: { name: 'Dogechain Explorer', url: 'https://explorer.dogechain.dog' },
   },
   nativeCurrency: {
-    name: 'Bitcoin',
-    symbol: 'BTC',
+    name: 'Dogecoin',
+    symbol: 'DOGE',
     decimals: 18,
   },
   blockInterval: 2,
   contracts: {
     multicall3: {
-      address: '0x474bAbC4b6595D5BDfbbeEdA558CA36114a0E7f7',
-      blockCreated: 625968,
+      address: '0x3d2e33eb61677869d87ac92d3c8891ec5c57fa5b',
+      blockCreated: 4308714,
     },
   },
   wrappedNative: {
-    address: '0xA460F83cdd9584E4bD6a9838abb0baC58EAde999',
+    address: '0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101',
     decimals: 18,
-    symbol: 'wtBTC',
-    name: 'Wrapped Test BTC',
+    symbol: 'WDOGE',
+    name: 'Wrapped Doge',
   },
   iceAddress: '0x81bCEa03678D1CEF4830942227720D542Aa15817',
   stableToken: {
@@ -38,9 +39,9 @@ export const dogechain: IceChain = {
     name: 'Tether USD',
   },
   swap: {
-    factoryAddress: "0xB27fEFF52c463602aA9d939dc090B46439134119",
-    initCodeHash: "0x246ba35fa37fb6bf3b71cd68dd22514e93a5d804976bfd9895b26b4434adb34d",
-    routerAddress: "0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3",
+    factoryAddress: FACTORY_ADDRESS,
+    routerAddress: ROUTER_ADDRESS,
+    initCodeHash: INIT_CODE_HASH,
   },
   farmV2Address: '0xc44a6eb41f02740A6778CCb9591448a5EBC73b74',
 }
