@@ -1,7 +1,7 @@
 import IceChain from '../ice-chain'
 
 export const bob: IceChain = {
-  id: 31611,
+  id: 3161,
   name: 'MEZO',
   features: ['swap'],
   network: 'mezo',

@@ -1,47 +1,45 @@
-import { FACTORY_ADDRESS, INIT_CODE_HASH, ROUTER_ADDRESS } from "../common/swap";
 import IceChain from '../ice-chain'
 
-export const dokenchain: IceChain = {
-  id: 61916,
-  name: 'DoKEN Super Chain Mainnet',
+export const bob: IceChain = {
+  id: 31611,
+  name: 'Mezo',
   features: ['swap'],
-  network: 'doken',
+  network: 'mezo',
   rpcUrls: {
-    public: { http: ['https://nyrpc.doken.dev'] },
-    default: { http: ['https://nyrpc.doken.dev'] },
+    public: { http: ['https://rpc.test.mezo.org',] },
+    default: { http: ['https://rpc.test.mezo.org',] },
   },
   blockExplorers: {
-    default: { name: 'Doken Explorer', url: 'https://explorer.doken.dev' },
+    default: { name: 'Mezo Explorer', url: 'https://explorer.test.mezo.org' },
   },
   nativeCurrency: {
-    name: 'Doken',
-    symbol: 'DKN',
+    name: 'Bitcoin',
+    symbol: 'BTC',
     decimals: 18,
   },
-  blockInterval: 10,
   contracts: {
     multicall3: {
-      address: '0xb999ea90607a826a3e6e6646b404c3c7d11fa39d',
-      blockCreated: 451563,
+      address: '0x474bAbC4b6595D5BDfbbeEdA558CA36114a0E7f7',
+      blockCreated: 625968,
     },
   },
+  blockInterval: 2,
   wrappedNative: {
-    address: '0x27b45bCC26e01Ed50B4080A405D1c492FEe89d63',
+    address: '0xA460F83cdd9584E4bD6a9838abb0baC58EAde999',
     decimals: 18,
-    symbol: 'WDKN',
-    name: 'Wrapped DoKEN',
+    symbol: 'wtBTC',
+    name: 'Wrapped Test BTC',
   },
-  iceAddress: '0x54051D9DbE99687867090d95fe15C3D3E35512Ba',
   stableToken: {
-    address: '0x8e6dAa037b7F130020b30562f1E2a5D02233E6c5',
+    address: '0xC2d002e83016Ce8e9BB58ff8A006128B7C6c058e',
     decimals: 18,
-    symbol: 'USDT',
-    name: 'Tether USD',
+    symbol: 'LIMPETH',
+    name: 'ETH PUMP, BTC DUMP',
   },
   swap: {
-    factoryAddress: FACTORY_ADDRESS,
-    routerAddress: ROUTER_ADDRESS,
-    initCodeHash: INIT_CODE_HASH,
+    factoryAddress: "0xB27fEFF52c463602aA9d939dc090B46439134119",
+    initCodeHash: "0x246ba35fa37fb6bf3b71cd68dd22514e93a5d804976bfd9895b26b4434adb34d",
+    routerAddress: "0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3",
   },
-  farmV2Address: '0x509733EaB85DEbdAE55306Aa81e3E4326f71cE0D',
+  farmV2Address: '0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3',
 }
