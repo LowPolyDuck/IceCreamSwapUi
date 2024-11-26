@@ -1,38 +1,39 @@
+import { FACTORY_ADDRESS, INIT_CODE_HASH, ROUTER_ADDRESS } from "../common/swap";
 import IceChain from '../ice-chain'
 
 export const shimmerTestnet: IceChain = {
-  id: 31611,
-  name: 'MEZO',
+  id: 1072,
+  name: 'ShimmerEVM Testnet',
   features: ['swap'],
-  network: 'mezo',
+  network: 'ShimmerTestnet',
   rpcUrls: {
-    public: { http: ['https://rpc.test.mezo.org',] },
-    default: { http: ['https://rpc.test.mezo.org',] },
+    public: { http: ['https://json-rpc.evm.testnet.shimmer.network'] },
+    default: { http: ['https://json-rpc.evm.testnet.shimmer.network'] },
   },
   blockExplorers: {
-    default: { name: 'Mezo Explorer', url: 'https://explorer.test.mezo.org' },
+    default: { name: 'Shimmer(Testnet) Explorer', url: 'https://explorer.evm.testnet.shimmer.network' },
   },
   nativeCurrency: {
-    name: 'Bitcoin',
-    symbol: 'BTC',
+    name: 'Shimmer',
+    symbol: 'SMR',
     decimals: 18,
   },
   contracts: {
     multicall3: {
-      address: '0x474bAbC4b6595D5BDfbbeEdA558CA36114a0E7f7',
-      blockCreated: 625968,
+      address: '0xf3a3dAf360161B2f10c645EF039C709A3Fd4Ea62',
+      blockCreated: 71272,
     },
   },
-  blockInterval: 2,
+  blockInterval: 5, // shimmer does not seem to have fixed block intervals, investigate
   wrappedNative: {
-    address: '0xA460F83cdd9584E4bD6a9838abb0baC58EAde999',
+    address: '0x7A09690ccC71205DbeCcB8158f43980bB60e9d65',
     decimals: 18,
-    symbol: 'wtBTC',
-    name: 'Wrapped Test BTC',
+    symbol: 'WSMR',
+    name: 'Wrapped Shimmer',
   },
   swap: {
-    factoryAddress: "0xB27fEFF52c463602aA9d939dc090B46439134119",
-    initCodeHash: "0x246ba35fa37fb6bf3b71cd68dd22514e93a5d804976bfd9895b26b4434adb34d",
-    routerAddress: "0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3",
+    factoryAddress: FACTORY_ADDRESS,
+    initCodeHash: INIT_CODE_HASH,
+    routerAddress: ROUTER_ADDRESS,
   },
 }
