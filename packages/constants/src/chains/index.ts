@@ -57,7 +57,7 @@ export const chainMap = {
   xodex,
   gravityalpha,
   shardeumTestnet,
-  // shimmerTestnet,
+  shimmerTestnet,
   mint,
   rootstock,
   swanmainnet,
