@@ -2,7 +2,7 @@ import { FACTORY_ADDRESS, INIT_CODE_HASH, ROUTER_ADDRESS } from "../common/swap"
 import IceChain from '../ice-chain'
 
 export const dogechain: IceChain = {
-  id: 31611,
+  id: 2000,
   name: 'Dogechain Mainnet',
   features: ['swap'],
   network: 'dogechain',
