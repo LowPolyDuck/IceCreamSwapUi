@@ -19,8 +19,8 @@ export const bob: IceChain = {
   },
   contracts: {
     multicall3: {
-      address: '0xC0C15c6db667166EeD8255b289B8Dc5F5B2B82B1',
-      blockCreated: 523294,
+      address: '0x474bAbC4b6595D5BDfbbeEdA558CA36114a0E7f7',
+      blockCreated: 625968,
     },
   },
   blockInterval: 2,
