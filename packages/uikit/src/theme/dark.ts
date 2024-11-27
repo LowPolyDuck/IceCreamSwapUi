@@ -12,7 +12,7 @@ import { darkColors } from "./colors";
 
 const darkTheme: DefaultTheme = {
   ...base,
-  isDark: true,
+  isDark: false,
   alert: darkAlert,
   colors: darkColors,
   card: darkCard,
