@@ -31,7 +31,7 @@ export const bob: IceChain = {
     name: 'Wrapped Test BTC',
   },
   stableToken: {
-    address: '0x948084ea633b867b84CD9800D59053784639BD51',
+    address: '0x72520922E4Eeccc7b71AeA6aca4FcB8b37D71E3e',
     decimals: 18,
     symbol: 'mUSD',
     name: 'mUSD',
