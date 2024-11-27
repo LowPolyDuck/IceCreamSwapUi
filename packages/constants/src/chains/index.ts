@@ -33,7 +33,7 @@ import { linea } from "./linea"
 import { berachainTestnet } from "./berachainTestnet"
 
 export const chainMap = {
-  // core,
+  core,
   bsc,
   bob,
   boba,
@@ -52,7 +52,7 @@ export const chainMap = {
   scroll,
   oneWorld,
   xdc,
-  dogechain,
+  // dogechain,
   fuse,
   xodex,
   gravityalpha,
