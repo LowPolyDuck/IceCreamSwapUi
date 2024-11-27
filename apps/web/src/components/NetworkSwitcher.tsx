@@ -166,7 +166,6 @@ export const NetworkSwitcher: React.FC<BoxProps> = (props) => {
           <LabelText title={typeof text === "string" && text}>
             {text}
           </LabelText>
-          {!cannotChangeNetwork && <ChevronDownIcon color="text" width="24px" />}
         </StyledUserMenu>
       </Flex>
 
