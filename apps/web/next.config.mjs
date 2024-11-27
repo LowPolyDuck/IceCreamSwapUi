@@ -207,7 +207,7 @@ const config = {
       },
       {
         source: '/images/tokens/:address',
-        destination: 'https://interface-web-rho.vercel.app/images/:address',
+        destination: 'https://tokens.pancakeswap.finance/images/:address',
         permanent: false,
       },
     ]
