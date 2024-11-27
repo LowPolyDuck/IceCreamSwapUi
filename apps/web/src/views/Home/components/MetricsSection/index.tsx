@@ -40,7 +40,7 @@ const Stats = () => {
         {t('Get some thicc ass tokens to dump')}
       </Heading>
       <Text textAlign="center" color="textSubtle">
-        {t('In case of an investigation by any thicc federal entity or similar, I do not have any involvement with this dumpy group or with the dumpy people in it.')}<br/>
+        {t('In case of investigation by any thicc federal entity or similar, I do not have any involvement with this dumpy group or the dumpy people in it.')}<br/>
       </Text>
       {/*
       <Flex flexWrap="wrap">
