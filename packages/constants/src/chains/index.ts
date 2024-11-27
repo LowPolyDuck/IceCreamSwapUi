@@ -52,7 +52,7 @@ export const chainMap = {
   scroll,
   oneWorld,
   xdc,
-  // dogechain,
+  dogechain,
   fuse,
   xodex,
   gravityalpha,
