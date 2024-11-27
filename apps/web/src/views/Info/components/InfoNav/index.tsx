@@ -22,7 +22,6 @@ import { chains } from 'utils/wagmi'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { arbitrum, bsc, mainnet, polygonZkEvm, zkSync, linea, base } from 'wagmi/chains'
 import { ASSET_CDN } from 'config/constants/endpoints'
-import { defaultChainId } from '@icecreamswap/constants'
 
 const NavWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gradientCardHeader};
@@ -120,27 +119,26 @@ const NetworkSelect: React.FC<{ chainId: ChainId; switchNetwork: (chainId: numbe
                                                                                                  }) => {
   const { t } = useTranslation()
 
-  const defaultChain = chains.find((chain) => chain.id === defaultChainId)
-
   return (
     <>
-      {defaultChain ? (
+      <Box px="16px" py="8px">
+        <Text color="textSubtle">{t('Select a Network')}</Text>
+      </Box>
+      <UserMenuDivider />
+      {targetChains.map((chain) => (
         <UserMenuItem
-          key={defaultChain.id}
-          style={{ justifyContent: 'flex-start', overflow: "hidden" }}
+          key={chain.id}
+          style={{ justifyContent: 'flex-start' }}
           onClick={() => {
-            if (defaultChain.id === chainId) return
-            switchNetwork(defaultChain.id)
+            if (chain.id !== chainId) switchNetwork(chain.id)
           }}
         >
-          <ChainLogo chainId={defaultChain.id} />
-          <Text color={defaultChain.id === chainId ? 'secondary' : 'text'} bold={defaultChain.id === chainId} pl="12px">
-            {defaultChain.name}
+          <ChainLogo chainId={chain.id} />
+          <Text color={chain.id === chainId ? 'secondary' : 'text'} bold={chain.id === chainId} pl="12px">
+            {chain.name}
           </Text>
         </UserMenuItem>
-      ) : (
-        <h2>{t("No available networks")}</h2>
-      )}
+      ))}
     </>
   )
 }
