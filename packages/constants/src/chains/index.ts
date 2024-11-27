@@ -109,4 +109,4 @@ export enum ChainId {
   BERACHAIN_TEST = berachainTestnet.id,
 }
 
-export const defaultChainId = ChainId.CORE
+export const defaultChainId = ChainId.BOB
