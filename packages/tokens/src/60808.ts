@@ -1,4 +1,4 @@
-import { ChainId, WETH9 } from '@pancakeswap/sdk'
+import { ChainId, WETH9, ERC20Token } from '@pancakeswap/sdk'
 
 export const bobTokens = {
   weth: WETH9[ChainId.BOB],
