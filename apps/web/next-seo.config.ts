@@ -2,9 +2,9 @@ import { DefaultSeoProps } from 'next-seo'
 
 export const SEO: DefaultSeoProps = {
   titleTemplate: '%s | Get Hella Thicc.',
-  defaultTitle: 'Swap',
+  defaultTitle: 'DumpySwap',
   description:
-    'Cheaper and faster than Uniswap? Discover PancakeSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE.',
+    'Dumpy Thicc.',
   twitter: {
     cardType: 'summary_large_image',
     handle: '@PancakeSwap',
