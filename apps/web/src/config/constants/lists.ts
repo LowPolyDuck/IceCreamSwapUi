@@ -21,6 +21,9 @@ export const MULTI_CHAIN_LIST_URLS: { [chainId: number]: string[] } = {
     'https://static.optimism.io/optimism.tokenlist.json',
     'https://tokens.coingecko.com/base/all.json'
   ],
+  [ChainId.BOB]: [
+    'https://raw.githubusercontent.com/LowPolyDuck/IceCreamSwapUi/refs/heads/IceCreamSwapV3/apps/web/src/config/constants/tokenLists/pancake-supported-onramp-currency-list.json'
+  ],
 }
 
 export const UNSUPPORTED_LIST_URLS: string[] = []
