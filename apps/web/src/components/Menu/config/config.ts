@@ -1,3 +1,52 @@
+import {
+  MenuItemsType,
+  SwapIcon,
+  SwapFillIcon,
+  EarnFillIcon,
+  EarnIcon,
+  DropdownMenuItems,
+  BridgeIcon,
+  DropdownMenuItemType,
+  RocketIcon,
+  InfoIcon,
+  MoreHorizontalIcon
+} from '@pancakeswap/uikit'
+import { ContextApi } from '@pancakeswap/localization'
+import {
+  SUPPORT_BUY_CRYPTO,
+  SUPPORT_FARMS,
+  SUPPORT_STAKING,
+  SUPPORT_INFO,
+  SUPPORT_SWAP,
+  SUPPORT_BRIDGE,
+  SUPPORT_LOCKS,
+  SUPPORT_LAUNCHPAD,
+  SUPPORT_TOKEN_DEPLOYER,
+  SUPPORT_KYC,
+  SUPPORT_KYC_DELEGATION
+} from "config/constants/supportChains";
+
+export type ConfigMenuDropDownItemsType = DropdownMenuItems & {
+  hideSubNav?: boolean
+  items?: ConfigMenuDropDownItemsType[]
+}
+export type ConfigMenuItemsType = Omit<MenuItemsType, 'items'> & { hideSubNav?: boolean; image?: string } & {
+  items?: ConfigMenuDropDownItemsType[]
+}
+
+const addMenuItemSupported = (item, chainId) => {
+  if (!chainId || !item.supportChainIds) {
+    return item
+  }
+  if (item.supportChainIds?.includes(chainId)) {
+    return item
+  }
+  return {
+    ...item,
+    disabled: true,
+  }
+}
+
 const config: (
   t: ContextApi['t'],
   isDark: boolean,
@@ -28,7 +77,6 @@ const config: (
         }, */
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    /* TEMPORARILY DISABLED MENU ITEMS
     {
       label: t('Earn'),
       href: '/farms',
@@ -59,6 +107,15 @@ const config: (
       showItemsOnMobile: false,
       items: [],
     },
+    /*{
+      label: t('Launchpad'),
+      href: '/launchpad',
+      icon: RocketIcon,
+      hideSubNav: true,
+      showItemsOnMobile: false,
+      supportChainIds: SUPPORT_LAUNCHPAD,
+      items: [],
+    },*/
     {
       label: t('Info'),
       href: '/info',
@@ -73,6 +130,7 @@ const config: (
       icon: MoreHorizontalIcon,
       showItemsOnMobile: true,
       hideSubNav: true,
+      // supportChainIds: [...SUPPORT_INFO, ...SUPPORT_LOCKS, ...SUPPORT_KYC],
       items: [
         {
           label: t('Locks'),
@@ -114,7 +172,65 @@ const config: (
           href: languageCode === 'zh-cn' ? 'https://wiki.icecreamswap.com/v/zh' : 'https://wiki.icecreamswap.com',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
+        // {
+        //   label: t('Create Token'),
+        //   href: '/create-token',
+        //   supportChainIds: SUPPORT_LOCKS,
+        // },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    END TEMPORARILY DISABLED MENU ITEMS */
+    /*
+    {
+      label: '',
+      href: '/info',
+      icon: MoreIcon,
+      hideSubNav: true,
+      items: [
+        {
+          label: t('Info'),
+          href: '/info/v3',
+        },
+        {
+          label: t('IFO'),
+          href: '/ifo',
+          supportChainIds: SUPPORT_ONLY_BSC,
+          image: '/images/ifos/ifo-bunny.png',
+        },
+        {
+          label: t('Affiliate Program'),
+          href: '/affiliates-program',
+        },
+        {
+          label: t('Voting'),
+          href: '/voting',
+          supportChainIds: SUPPORT_ONLY_BSC,
+          image: '/images/voting/voting-bunny.png',
+        },
+        {
+          type: DropdownMenuItemType.DIVIDER,
+        },
+        {
+          label: t('Leaderboard'),
+          href: '/teams',
+          supportChainIds: SUPPORT_ONLY_BSC,
+          image: '/images/decorations/leaderboard.png',
+        },
+        {
+          type: DropdownMenuItemType.DIVIDER,
+        },
+        {
+          label: t('Blog'),
+          href: 'https://blog.pancakeswap.finance',
+          type: DropdownMenuItemType.EXTERNAL_LINK,
+        },
+        {
+          label: t('Docs'),
+          href: 'https://docs.icecreamswap.com',
+          type: DropdownMenuItemType.EXTERNAL_LINK,
+        },
+      ].map((item) => addMenuItemSupported(item, chainId)),
+    },
+       */
   ].map((item) => addMenuItemSupported(item, chainId))
+
+export default config
