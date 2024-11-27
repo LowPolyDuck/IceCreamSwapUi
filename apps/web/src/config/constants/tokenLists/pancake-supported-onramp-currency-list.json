@@ -11,11 +11,11 @@
   "keywords": ["pancake", "default"],
   "tokens": [
     {
-      "name": "Binance USD",
-      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-      "symbol": "BUSD",
+      "name": "ETH DUMP, BTC PUMP",
+      "address": "0xC2d002e83016Ce8e9BB58ff8A006128B7C6c058e",
+      "symbol": "LIMPETH",
       "decimals": 18,
-      "chainId": 56,
+      "chainId": 31611,
       "logoURI": "https://tokens.pancakeswap.finance/images/symbol/BUSD.png"
     },
     {
