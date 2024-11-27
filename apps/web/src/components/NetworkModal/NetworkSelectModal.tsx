@@ -5,12 +5,13 @@ import {useTranslation} from '@pancakeswap/localization'
 import {useState} from 'react'
 import {useActiveChainId} from 'hooks/useActiveChainId'
 import {ChainLogo} from 'components/Logo/ChainLogo'
+import {useSupportedChains} from 'hooks/useSupportedChains'
 import chainName from 'config/constants/chainName'
 
 
 const NetworkSelect = ({switchNetwork, chainId, onCloseModal, filter}) => {
   const {t} = useTranslation()
-  const supportedChains = [ChainId.BOB]
+  const supportedChains = useSupportedChains()
 
   const contents = chains
     .filter((chain) => chainName[chain.id].toLowerCase().indexOf(filter.toLowerCase()) >= 0)
