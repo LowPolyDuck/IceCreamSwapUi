@@ -102,10 +102,10 @@ const Footer = () => {
       {/* )} */}
       <Wrapper>
         <Heading mb="24px" scale="xl" color="white">
-          {t('Join us on social media')}
+          {t('Please dont join us on social media')}
         </Heading>
         <Text textAlign="center" color="white" mb="24px">
-          {t("Don't miss out on the latest news and updates!")}
+          {t("All of our social media is wack as hell")}
         </Text>
 
         <Flex mb="24px" style={{ gap: '12px' }}>

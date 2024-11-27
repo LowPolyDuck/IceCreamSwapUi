@@ -37,10 +37,10 @@ const Stats = () => {
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
       <GradientLogo height="48" width="48" style={{ marginBottom: '24px' }} />
       <Heading textAlign="center" scale="xl" mb="32px">
-        {t('Self improving AI DEX aggregator')}
+        {t('Get some thicc ass tokens to dump')}
       </Heading>
       <Text textAlign="center" color="textSubtle">
-        {t('The AI powered DEX aggregator improves with every swap. The more you trade, the smarter and more efficient the aggregator becomes.')}<br/>
+        {t('In case of an investigation by any thicc federal entity or similar, I do not have any involvement with this dumpy group or with the dumpy people in it.')}<br/>
       </Text>
       {/*
       <Flex flexWrap="wrap">

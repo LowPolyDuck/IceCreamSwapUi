@@ -142,17 +142,17 @@ const config = {
       },
       {
         source: '/twitter',
-        destination: 'https://twitter.com/icecream_swap',
+        destination: 'https://www.youtube.com/watch?v=uQTrmnE_vUo',
         permanent: false,
       },
       {
         source: '/discord',
-        destination: 'https://discord.gg/rx6WGBPTty',
+        destination: 'https://www.youtube.com/watch?v=uQTrmnE_vUo',
         permanent: false,
       },
       {
         source: '/telegram',
-        destination: 'https://t.me/Icecreamswap_com',
+        destination: 'https://www.youtube.com/watch?v=uQTrmnE_vUo',
         permanent: false,
       },
       {
