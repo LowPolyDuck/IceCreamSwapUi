@@ -139,6 +139,10 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   const subLinksWithoutMobile = useMemo(() => subLinks?.filter((subLink) => !subLink.isMobileOnly), [subLinks]);
   const subLinksMobileOnly = useMemo(() => subLinks?.filter((subLink) => subLink.isMobileOnly), [subLinks]);
   const providerValue = useMemo(() => ({ linkComponent }), [linkComponent]);
+
+  // Add a flag to control the visibility of the CakePrice
+  const showCakePrice = false; // Set to false to hide the price
+
   return (
     <MenuContext.Provider value={providerValue}>
       <AtomBox
@@ -159,9 +163,11 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
                 </AtomBox>
               </Flex>
               <Flex alignItems="center" height="100%">
-                <AtomBox mr="12px" display={{ xs: "none", lg: "block" }}>
-                  <CakePrice showSkeleton={false} cakePriceUsd={cakePriceUsd} chainId={chainId} />
-                </AtomBox>
+                {showCakePrice && ( // Conditionally render the CakePrice
+                  <AtomBox mr="12px" display={{ xs: "none", lg: "block" }}>
+                    <CakePrice showSkeleton={false} cakePriceUsd={cakePriceUsd} chainId={chainId} />
+                  </AtomBox>
+                )}
                 <Box mt="4px">
                   <LangSelector
                     currentLang={currentLang}
