@@ -3,9 +3,9 @@ import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'IceCreamSwap Multi-chain DeFi ecosystem, Swap, Bridge, LaunchPad',
+  title: 'DumpySwap',
   description:
-    'Multi-chain DeFi ecosystem with Swap, Bridge and Launchpad. Trade, Bridge, Earn and Launch on Bitgert (Brise), Binance smart chain (BSC), XDC, XoDex, Dogechain, Fuse and CORE blockchain',
+    'Dumpy Thicc.',
   image: 'https://icecreamswap.com/images/hero.png',
 }
 
@@ -36,7 +36,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
           'Transfer tokens between multiple Chains including Core, Bitgert, Binance, XDC, Fuse and may more on IceCreamSwap DEX.',
       },
     },
-    defaultTitleSuffix: t('IceCreamSwap'),
+    defaultTitleSuffix: t('DumpySwap'),
   }
 }
 
