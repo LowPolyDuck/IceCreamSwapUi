@@ -81,7 +81,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <Hero />
       </StyledHeroSection>
-      {/* Commenting out the PageSections
+      {/* Commenting out other PageSections except home-2 and Footer */}
       <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
         containerProps={{
@@ -92,7 +92,8 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <MetricsSection />
       </PageSection>
-      <PageSection
+      {/* Other PageSections are commented out */}
+      {/* <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={theme.colors.background}
         containerProps={{
@@ -140,7 +141,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <RoadmapSection />
         <FaqSection />
-      </PageSection>
+      </PageSection> */}
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background="linear-gradient(180deg, #7645D9 0%, #5121B1 100%)"
@@ -149,7 +150,6 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <Footer />
       </PageSection>
-      */}
     </>
   )
 }
