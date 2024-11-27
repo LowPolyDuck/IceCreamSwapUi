@@ -132,7 +132,7 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-            {t('Welcome to DumpySwap')}
+            {t('Welcome to Dumpy Swap')}
           </Heading>
           <Heading as="p" scale="md" mb="24px">
             {t('The thiccest DEX on matsNet. Dump tokens at the worst rates.')}
