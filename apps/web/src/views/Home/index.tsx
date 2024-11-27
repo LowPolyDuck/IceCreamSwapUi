@@ -39,11 +39,7 @@ const UserBannerWrapper = styled(Container)`
 
 const Home: React.FC<React.PropsWithChildren> = () => {
   const { theme } = useTheme()
-  // const { account } = useWeb3React()
-  // const { chainId } = useActiveChainId()
-
   const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
-
   const { t } = useTranslation()
 
   return (
@@ -85,6 +81,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <Hero />
       </StyledHeroSection>
+      {/* Commenting out the PageSections
       <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
         containerProps={{
@@ -152,6 +149,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <Footer />
       </PageSection>
+      */}
     </>
   )
 }
