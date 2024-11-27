@@ -87,8 +87,8 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
         />
         <meta name="theme-color" content="#F8567F" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://icecreamswap.com/images/hero.png" />
-        <meta name="twitter:title" content="🍦 IceCreamSwap - Multi-chain DeFi ecosystem" />
+        <meta name="twitter:image" content="https://i.postimg.cc/fbMggLPf/9cb514a5-99db-4bdb-8226-eae82335551f-removebg-preview.png" />
+        <meta name="twitter:title" content="🦛 DumpySwap - Get hella thicc tokens on matsNet." />
         <meta
           name="twitter:description"
           content="Dumpy Thicc."
