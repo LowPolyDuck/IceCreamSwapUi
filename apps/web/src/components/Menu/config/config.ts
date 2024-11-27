@@ -77,6 +77,7 @@ const config: (
         }, */
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
+    /* TEMPORARILY DISABLED MENU ITEMS
     {
       label: t('Earn'),
       href: '/farms',
@@ -107,15 +108,6 @@ const config: (
       showItemsOnMobile: false,
       items: [],
     },
-    /*{
-      label: t('Launchpad'),
-      href: '/launchpad',
-      icon: RocketIcon,
-      hideSubNav: true,
-      showItemsOnMobile: false,
-      supportChainIds: SUPPORT_LAUNCHPAD,
-      items: [],
-    },*/
     {
       label: t('Info'),
       href: '/info',
@@ -130,7 +122,6 @@ const config: (
       icon: MoreHorizontalIcon,
       showItemsOnMobile: true,
       hideSubNav: true,
-      // supportChainIds: [...SUPPORT_INFO, ...SUPPORT_LOCKS, ...SUPPORT_KYC],
       items: [
         {
           label: t('Locks'),
@@ -172,65 +163,9 @@ const config: (
           href: languageCode === 'zh-cn' ? 'https://wiki.icecreamswap.com/v/zh' : 'https://wiki.icecreamswap.com',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
-        // {
-        //   label: t('Create Token'),
-        //   href: '/create-token',
-        //   supportChainIds: SUPPORT_LOCKS,
-        // },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    /*
-    {
-      label: '',
-      href: '/info',
-      icon: MoreIcon,
-      hideSubNav: true,
-      items: [
-        {
-          label: t('Info'),
-          href: '/info/v3',
-        },
-        {
-          label: t('IFO'),
-          href: '/ifo',
-          supportChainIds: SUPPORT_ONLY_BSC,
-          image: '/images/ifos/ifo-bunny.png',
-        },
-        {
-          label: t('Affiliate Program'),
-          href: '/affiliates-program',
-        },
-        {
-          label: t('Voting'),
-          href: '/voting',
-          supportChainIds: SUPPORT_ONLY_BSC,
-          image: '/images/voting/voting-bunny.png',
-        },
-        {
-          type: DropdownMenuItemType.DIVIDER,
-        },
-        {
-          label: t('Leaderboard'),
-          href: '/teams',
-          supportChainIds: SUPPORT_ONLY_BSC,
-          image: '/images/decorations/leaderboard.png',
-        },
-        {
-          type: DropdownMenuItemType.DIVIDER,
-        },
-        {
-          label: t('Blog'),
-          href: 'https://blog.pancakeswap.finance',
-          type: DropdownMenuItemType.EXTERNAL_LINK,
-        },
-        {
-          label: t('Docs'),
-          href: 'https://docs.icecreamswap.com',
-          type: DropdownMenuItemType.EXTERNAL_LINK,
-        },
-      ].map((item) => addMenuItemSupported(item, chainId)),
-    },
-       */
+    END TEMPORARILY DISABLED MENU ITEMS */
   ].map((item) => addMenuItemSupported(item, chainId))
 
 export default config
