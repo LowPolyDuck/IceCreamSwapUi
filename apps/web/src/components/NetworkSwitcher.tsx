@@ -160,7 +160,7 @@ export const NetworkSwitcher: React.FC<BoxProps> = (props) => {
       </ModalV2>
 
       {cannotChangeNetwork && tooltipVisible && tooltip}
-      <Flex alignItems="center" height="100%" pr="8px" onClick={() => setIsSelectorOpen(true)}>
+      <Flex alignItems="center" height="100%" pr="8px" onClick={() => setIsSelectorOpen(false)}>
         <StyledUserMenu width="100%">
           <MenuIcon avatarSrc={`/images/chains/${chainId}.png`} variant={isLoading ? 'pending' : isWrongNetwork ? 'danger' : 'default'} />
           <LabelText title={typeof text === "string" && text}>
