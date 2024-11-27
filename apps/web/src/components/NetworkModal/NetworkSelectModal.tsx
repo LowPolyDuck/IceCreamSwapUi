@@ -2,24 +2,21 @@ import {UserMenuItem, Input, Modal, Text, Box} from '@pancakeswap/uikit'
 import {useSwitchNetwork} from 'hooks/useSwitchNetwork'
 import {chains} from '@icecreamswap/constants'
 import {useTranslation} from '@pancakeswap/localization'
-import {useState, useMemo} from 'react'
+import {useState} from 'react'
 import {useActiveChainId} from 'hooks/useActiveChainId'
 import {ChainLogo} from 'components/Logo/ChainLogo'
 import {useSupportedChains} from 'hooks/useSupportedChains'
 import chainName from 'config/constants/chainName'
-import {ChainId} from '@icecreamswap/constants'
 
 
-const NetworkSelect = ({switchNetwork, chainId, onCloseModal}) => {
+const NetworkSelect = ({switchNetwork, chainId, onCloseModal, filter}) => {
   const {t} = useTranslation()
   const supportedChains = useSupportedChains()
 
-  const desiredChainId = ChainId.BOB
-
-  const contents = useMemo(() => {
-    return chains.filter((chain) => chain.id === desiredChainId)
-  }, [desiredChainId])
-
+  const contents = chains
+    .filter((chain) => chainName[chain.id].toLowerCase().indexOf(filter.toLowerCase()) >= 0)
+    .filter((chain) => !chain.testnet || chain.id === chainId)
+    .filter((chain) => supportedChains.length == 0 || supportedChains.includes(chain.id));
   return (
     <>
       {contents.length > 0 ?
