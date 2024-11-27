@@ -2,7 +2,7 @@ import {UserMenuItem, Input, Modal, Text, Box} from '@pancakeswap/uikit'
 import {useSwitchNetwork} from 'hooks/useSwitchNetwork'
 import {chains} from '@icecreamswap/constants'
 import {useTranslation} from '@pancakeswap/localization'
-import {useState} from 'react'
+import {useState, useMemo} from 'react'
 import {useActiveChainId} from 'hooks/useActiveChainId'
 import {ChainLogo} from 'components/Logo/ChainLogo'
 import {useSupportedChains} from 'hooks/useSupportedChains'
@@ -13,14 +13,19 @@ const NetworkSelect = ({switchNetwork, chainId, onCloseModal, filter}) => {
   const {t} = useTranslation()
   const supportedChains = useSupportedChains()
 
-  const contents = chains
-    .filter((chain) => chainName[chain.id].toLowerCase().indexOf(filter.toLowerCase()) >= 0)
-    .filter((chain) => !chain.testnet || chain.id === chainId)
-    .filter((chain) => supportedChains.length == 0 || supportedChains.includes(chain.id));
+  const desiredChainId = ChainId.BOB;
+
+  const contents = useMemo(() => {
+    return chains;
+  }, []);
+
   return (
     <>
-      {contents.length > 0 ?
-        contents.map((chain) => (
+      {contents.map((chain) => {
+        if (chain.id !== desiredChainId) {
+          return null;
+        }
+        return (
           <UserMenuItem
             key={chain.id}
             style={{justifyContent: 'flex-start', overflow: "hidden"}}
@@ -35,10 +40,9 @@ const NetworkSelect = ({switchNetwork, chainId, onCloseModal, filter}) => {
               {chainName[chain.id]}
             </Text>
           </UserMenuItem>
-        ))
-      :
-        <><h2>{t("No available networks")}</h2><br/></>
-      }
+        );
+      })}
+      {contents.length === 0 && <h2>{t("No available networks")}</h2>}
     </>
   )
 }
