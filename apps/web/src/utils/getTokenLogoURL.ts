@@ -2,13 +2,12 @@ import { getAddress } from 'ethers/lib/utils'
 import memoize from 'lodash/memoize'
 import { Token } from '@pancakeswap/sdk'
 import chainName from "../config/constants/chainName";
-import { TOKEN_LOGO_S3_BUCKET_NAME } from '@icecreamswap/constants';
 
 
 const getTokenLogoURL = memoize(
   (token?: Token) => {
     if (token && token.address && chainName[token.chainId]) {
-      return `https://${TOKEN_LOGO_S3_BUCKET_NAME}.s3.amazonaws.com/token/${token.chainId}/${getAddress(token.address)}.png`
+      return `https://raw.githubusercontent.com/LowPolyDuck/assetpngs/refs/heads/main/token/${token.chainId}/${getAddress(token.address)}.png`
     }
 
     /*
