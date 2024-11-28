@@ -35,7 +35,7 @@ export const getCurrencyLogoUrls = memoize(
     const chainId = currency?.chainId || ChainId.BSC;
     const tokenAddress = getAddress(currency?.wrapped?.address || "");
     const trustWalletLogo = getTokenLogoURL(currency?.wrapped);
-    const logoUrl = `https://icecreamswap-assets.s3.amazonaws.com/token/${chainId}/${tokenAddress}.png`;
+    const logoUrl = `https://https://raw.githubusercontent.com/LowPolyDuck/assetpngs/refs/heads/main/token/${chainId}/${tokenAddress}.png`;
     return [trustWalletLogo, logoUrl].filter((url) => Boolean(url)) as string[];
   },
   (currency?: Currency) => `logoUrls#${currency?.chainId}#${currency?.wrapped?.address}`

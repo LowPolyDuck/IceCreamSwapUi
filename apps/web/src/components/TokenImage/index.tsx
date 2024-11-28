@@ -13,7 +13,7 @@ interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc
 
 const getImageUrlFromToken = (token: Token) => {
   const address = token?.isNative ? token.wrapped.address : token.address
-  return `https://icecreamswap-assets.s3.amazonaws.com/token/${token.chainId}/${address}.png`
+  return `https://raw.githubusercontent.com/LowPolyDuck/assetpngs/refs/heads/main/token/${token.chainId}/${address}.png`
 }
 
 export const TokenPairImage: React.FC<React.PropsWithChildren<TokenPairImageProps>> = ({
