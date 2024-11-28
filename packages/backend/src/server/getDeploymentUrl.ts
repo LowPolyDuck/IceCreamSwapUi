@@ -1,6 +1,6 @@
 export const getDeploymentUrl = () => {
   if (process.env.VERCEL_ENV === 'production') {
-    return 'https://icecreamswap.com'
+    return 'interface-web-rho.vercel.app'
   }
   if (process.env.VERCEL_ENV === 'preview') {
     return process.env.VERCEL_URL
