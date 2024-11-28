@@ -54,7 +54,7 @@ const StakeModalContainer = ({
     earningToken.symbol,
   )
 
-  const tokenImageUrl = useMemo(() => `https://icecreamswap-assets.s3.amazonaws.com/token/${chainId}/`, [chainId])
+  const tokenImageUrl = useMemo(() => `https://raw.githubusercontent.com/LowPolyDuck/assetpngs/refs/heads/main/token/${chainId}/`, [chainId])
 
   const onDone = useCallback(() => {
     dispatch(updateUserStakedBalance({ sousId, account, chainId }))
