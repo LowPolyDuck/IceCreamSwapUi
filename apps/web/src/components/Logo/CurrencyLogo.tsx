@@ -55,7 +55,7 @@ export default function CurrencyLogo({ currency, size = '24px', style }: LogoPro
     return (
       <StyledLogo
         size={size}
-        srcs={[`/images/chains/${currency.chainId}.png`]}
+        srcs={[`/images/chains/${currency.chainId}x.png`]}
         width={size}
         style={style}
         alt={`native ${nativeName} logo`}
