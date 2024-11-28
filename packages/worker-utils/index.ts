@@ -1,6 +1,5 @@
 export const CORS_ALLOW = [
-  /\.icecreamswap\.com$/,
-  'https://icecreamswap.com',
+  'https://interface-web-rho.vercel.app',
   /^http:\/\/localhost(:\d+)?$/,
   /\.vercel\.app$/,
 ]
