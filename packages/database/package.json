@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "postinstall": "pnpm db:generate",
-    "db:generate": "npx prisma generate",
-    "db:push": "npx prisma db push --skip-generate"
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate"
   },
   "devDependencies": {
     "prisma": "^4.10.1"
