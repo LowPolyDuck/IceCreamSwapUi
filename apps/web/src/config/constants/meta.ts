@@ -6,7 +6,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'DumpySwap',
   description:
     'Dumpy Thicc.',
-  image: 'https://icecreamswap.com/images/hero.png',
+  image: 'https://raw.githubusercontent.com/LowPolyDuck/IceCreamSwapUi/refs/heads/IceCreamSwapV3/apps/web/public/images/home/hero-home.png',
 }
 
 interface PathList {
