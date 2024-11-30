@@ -7,7 +7,7 @@ export interface Session {
 
 export const sessionOptions: IronSessionOptions = {
   password: process.env.SECRET_COOKIE_PASSWORD!,
-  cookieName: 'ice-session',
+  cookieName: 'dumpy-session',
   cookieOptions: {
     secure: process.env.NODE_ENV === 'production',
   },

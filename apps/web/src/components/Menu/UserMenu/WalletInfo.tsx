@@ -177,7 +177,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
           )}
         </Box>
       )}
-      <Box mb="24px">
+     {/* <Box mb="24px">
         <Flex alignItems="center" justifyContent="space-between">
           <Text color="textSubtle">{t('ICE Balance')}</Text>
           {cakeFetchStatus !== FetchStatus.Fetched ? (
@@ -186,7 +186,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
             <Text>{formatBigInt(cakeBalance, 3)}</Text>
           )}
         </Flex>
-      </Box>
+      </Box> */}
       <Button variant="secondary" width="100%" minHeight={48} onClick={handleLogout}>
         {t('Disconnect Wallet')}
       </Button>
