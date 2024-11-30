@@ -95,7 +95,7 @@ const UserMenu = () => {
 
   if (isWrongNetwork) {
     return (
-      <UIKitUserMenu text={t('Network')}>
+      <UIKitUserMenu text={t('Network')} variant="danger">
         {menu}
       </UIKitUserMenu>
     )
