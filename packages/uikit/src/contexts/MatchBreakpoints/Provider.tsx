@@ -69,8 +69,8 @@ export const MatchBreakpointsContext = createContext<BreakpointChecks>({
 export const getBreakpointChecks = (state: State): BreakpointChecks => {
   return {
     ...state,
-    isMobile: state.isXs || state.isSm,
-    isTablet: state.isMd || state.isLg,
+    isMobile: false,
+    isTablet: state.isXs || state.isSm || state.isMd || state.isLg,
     isDesktop: state.isXl || state.isXxl,
   };
 };
