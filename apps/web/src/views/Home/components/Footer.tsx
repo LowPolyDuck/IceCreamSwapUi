@@ -118,7 +118,7 @@ const Footer = () => {
             scale="md"
             mr="8px"
           >
-            <TwitterIcon color="currentColor" mr="8px" /> {t('Twitter')}
+            <TwitterIcon color="currentColor" mr="8px" /> {t('')}
           </Button>
           <Button
             as="a"
@@ -129,7 +129,7 @@ const Footer = () => {
             scale="md"
             mr="8px"
           >
-            <TelegramIcon color="currentColor" mr="8px" /> {t('Telegram')}
+            <TelegramIcon color="currentColor" mr="8px" /> {t('')}
           </Button>
           <Button
             as="a"
@@ -140,7 +140,7 @@ const Footer = () => {
             scale="md"
             mr="8px"
           >
-            <DiscordIcon color="currentColor" mr="8px" /> {t('Discord')}
+            <DiscordIcon color="currentColor" mr="8px" /> {t('')}
           </Button>
         </Flex>
       </Wrapper>
