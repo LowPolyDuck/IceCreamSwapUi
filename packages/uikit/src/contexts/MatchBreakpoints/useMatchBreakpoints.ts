@@ -8,7 +8,11 @@ const useMatchBreakpoints = () => {
     throw new Error("Match Breakpoint context is undefined");
   }
 
-  return matchBreakpointContext;
+  // Override isMobile to always return false
+  return {
+    ...matchBreakpointContext,
+    isMobile: false,
+  };
 };
 
 export default useMatchBreakpoints;
