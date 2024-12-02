@@ -3,7 +3,7 @@ import IceChain from '../ice-chain'
 export const bob: IceChain = {
   id: 31611,
   name: 'Mezo',
-  features: ['swap'],
+  features: ['swap', 'info'],
   network: 'mezo',
   rpcUrls: {
     public: { http: ['https://rpc.test.mezo.org',] },
