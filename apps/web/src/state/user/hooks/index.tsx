@@ -355,7 +355,7 @@ export function usePairAdder(): (pair: Pair) => void {
  * @param [tokenA, tokenB] of the two tokens
  */
 export function toV2LiquidityToken([tokenA, tokenB]: [ERC20Token, ERC20Token]): ERC20Token {
-  return new ERC20Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'ICELP', 'icecreamswap.com LP')
+  return new ERC20Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'Uniswap V2')
 }
 
 /**
