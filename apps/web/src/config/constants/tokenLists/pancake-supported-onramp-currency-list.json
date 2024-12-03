@@ -25,6 +25,6 @@
       "decimals": 6,
       "chainId": 1,
       "logoURI": "https://tokens.pancakeswap.finance/images/symbol/usdc.png"
-    },
+    }
   ]
 }
