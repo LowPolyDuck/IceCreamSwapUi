@@ -14,12 +14,12 @@ export const CELER_API = 'https://api.celerscan.com/scan'
 
 export const INFO_CLIENT_WITH_CHAIN: Record<ChainId, string> = chains.reduce((acc, chain) => {
   if (!chain.features.includes('info')) return acc;
-  return {...acc, [chain.id]: `https://the-graph.icecreamswap.com/subgraphs/name/icecreamswap/exchange-v2-${chain.network}`}
+  return {...acc, [chain.id]: `http://localhost:8000/subgraphs/name/dumpyswap/exchange-v2-mezo`}
 }, {})
 
 export const BLOCKS_CLIENT_WITH_CHAIN: Record<ChainId, string> = chains.reduce((acc, chain) => {
   if (!chain.features.includes('info')) return acc;
-  return {...acc, [chain.id]: `https://the-graph.icecreamswap.com/subgraphs/name/icecreamswap/blocks-${chain.network}`}
+  return {...acc, [chain.id]: `http://localhost:8000/subgraphs/name/dumpyswap/blocks-mezo`}
 }, {})
 
 export const V3_SUBGRAPH_URLS: Record<ChainId, string> = chains.reduce((acc, chain) => {
