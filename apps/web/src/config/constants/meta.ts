@@ -25,9 +25,9 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/find': { title: t('Import Pool') },
       '/farms': { title: t('Farms') },
       '/pools': { title: t('Pools') },
-      '/info': { title: t('Overview'), description: 'View statistics for IceCreamSwap exchanges.' },
-      '/info/pools': { title: t('Pools'), description: 'View statistics for IceCreamSwap exchanges.' },
-      '/info/tokens': { title: t('Tokens'), description: 'View statistics for IceCreamSwap exchanges.' },
+      '/info': { title: t('Overview'), description: 'View statistics for Dumpy Swap.' },
+      '/info/pools': { title: t('Pools'), description: 'View statistics for Dumpy Swap.' },
+      '/info/tokens': { title: t('Tokens'), description: 'View statistics for Dumpy Swap.' },
       '/core': { basePath: true, title: t('Get Ready for Core 🚀') },
       '/bridge': {
         basePath: true,
