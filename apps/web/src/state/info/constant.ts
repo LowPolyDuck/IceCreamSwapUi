@@ -36,7 +36,7 @@ export const multiChainQueryClient = chains.reduce((acc, chain) => (
 ), {}) as Record<MultiChainName, GraphQLClient>
 
 export const multiChainScan = chains.reduce((acc, chain) => (
-    {...acc, [chain.network.toUpperCase()]: `${chain.network.charAt(0).toUpperCase() + chain.network.slice(1)}Scan`}
+    {...acc, [chain.network.toUpperCase()]: 'MezoScan'}
 ), {}) as Record<MultiChainName, string>
 
 export const multiChainTokenBlackList = chains.reduce((acc, chain) => (
