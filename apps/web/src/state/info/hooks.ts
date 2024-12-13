@@ -296,13 +296,9 @@ export const useChainNameByQuery = (): MultiChainName => {
   const { query } = useRouter()
   const chainName = useMemo(() => {
     if (typeof query?.chain === "string") {
-      const chain = query.chain.toLowerCase()
-      if (chain === 'bob' || chain === 'mezo') {
-        return "MEZO" as MultiChainName
-      }
       return query.chain.toUpperCase() as MultiChainName
     }
-    return "MEZO"  // Default to MEZO instead of CORE
+    return "CORE"
   }, [query])
   return chainName
 }
