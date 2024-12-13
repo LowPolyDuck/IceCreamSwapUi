@@ -11,7 +11,7 @@ export const core: IceChain = {
     default: { http: ['https://rpc-core.icecreamswap.com'] },
   },
   blockExplorers: {
-    default: { name: 'CORE Explorer', url: 'https://scan.coredao.org' },
+    default: { name: 'Mezo Explorer', url: 'https://explorer.test.mezo.org' },
   },
   nativeCurrency: {
     name: 'CORE',
