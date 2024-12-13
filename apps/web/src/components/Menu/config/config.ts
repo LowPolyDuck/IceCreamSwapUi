@@ -108,7 +108,7 @@ const config: (
       showItemsOnMobile: false,
       items: [],
     },
-    END TEMPORARILY DISABLED MENU ITEMS */
+  
     {
       label: t('Info'),
       href: '/info',
@@ -118,7 +118,7 @@ const config: (
       supportChainIds: SUPPORT_INFO,
       items: [],
     },
-        /* TEMPORARILY DISABLED MENU ITEMS
+        
     {
       label: t('More'),
       icon: MoreHorizontalIcon,
