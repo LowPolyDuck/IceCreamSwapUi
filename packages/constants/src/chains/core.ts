@@ -2,10 +2,10 @@ import { FACTORY_ADDRESS, INIT_CODE_HASH, ROUTER_ADDRESS } from "../common/swap"
 import IceChain from '../ice-chain'
 
 export const core: IceChain = {
-  id: 31611,
-  name: 'Mezo',
+  id: 1116,
+  name: 'Core Blockchain Mainnet',
   features: ['swap', 'swapV3', 'farms', 'farmsV3', 'info', 'infoV3', 'bridge', 'locks', 'staking', 'kyc', 'launchpad', 'tokenDeployer'],
-  network: 'mezo',
+  network: 'core',
   rpcUrls: {
     public: { http: ['https://rpc-core.icecreamswap.com'] },
     default: { http: ['https://rpc-core.icecreamswap.com'] },
