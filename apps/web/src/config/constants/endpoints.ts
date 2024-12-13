@@ -14,12 +14,12 @@ export const CELER_API = 'https://api.celerscan.com/scan'
 
 export const INFO_CLIENT_WITH_CHAIN: Record<ChainId, string> = chains.reduce((acc, chain) => {
   if (!chain.features.includes('info')) return acc;
-  return {...acc, [chain.id]: `https://api.goldsky.com/api/public/project_cm48lsrzo0axx01tna6rb1ee9/subgraphs/dumpyswap/exchange-v2-mezo/gn`}
+  return {...acc, [chain.id]: `https://api.goldsky.com/api/public/project_cm48lsrzo0axx01tna6rb1ee9/subgraphs/exchange-v2-mezo/1.0.0/gn`}
 }, {})
 
 export const BLOCKS_CLIENT_WITH_CHAIN: Record<ChainId, string> = chains.reduce((acc, chain) => {
   if (!chain.features.includes('info')) return acc;
-  return {...acc, [chain.id]: `https://api.goldsky.com/api/public/project_cm48lsrzo0axx01tna6rb1ee9/subgraphs/dumpyswap/blocks-mezo/gn`}
+  return {...acc, [chain.id]: `https://api.goldsky.com/api/public/project_cm48lsrzo0axx01tna6rb1ee9/subgraphs/blocks-mezo/1.0.0/gn`}
 }, {})
 
 export const V3_SUBGRAPH_URLS: Record<ChainId, string> = chains.reduce((acc, chain) => {
