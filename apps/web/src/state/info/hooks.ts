@@ -298,7 +298,7 @@ export const useChainNameByQuery = (): MultiChainName => {
     if (typeof query?.chain === "string") {
       const chain = query.chain.toLowerCase()
       if (chain === 'bob' || chain === 'mezo') {
-        return 'BOB' as MultiChainName
+        return "CORE" as MultiChainName
       }
       return query.chain.toUpperCase() as MultiChainName
     }
