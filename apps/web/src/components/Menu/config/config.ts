@@ -108,6 +108,7 @@ const config: (
       showItemsOnMobile: false,
       items: [],
     },
+    END TEMPORARILY DISABLED MENU ITEMS */
     {
       label: t('Info'),
       href: '/info',
@@ -117,6 +118,7 @@ const config: (
       supportChainIds: SUPPORT_INFO,
       items: [],
     },
+        /* TEMPORARILY DISABLED MENU ITEMS
     {
       label: t('More'),
       icon: MoreHorizontalIcon,
@@ -165,7 +167,7 @@ const config: (
         },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    END TEMPORARILY DISABLED MENU ITEMS */
+        END TEMPORARILY DISABLED MENU ITEMS */
   ].map((item) => addMenuItemSupported(item, chainId))
 
 export default config
