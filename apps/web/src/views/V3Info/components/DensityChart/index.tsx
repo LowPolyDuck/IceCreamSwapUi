@@ -105,20 +105,43 @@ export default function DensityChart({ address }: DensityChartProps) {
           poolTickData.ticksProcessed.map(async (t: TickProcessed, i) => {
             const active = t.tickIdx === poolTickData.activeTickIdx
             const sqrtPriceX96 = TickMath.getSqrtRatioAtTick(t.tickIdx)
-            
-            // Calculate theoretical price directly from tick without using pool liquidity
-            const price = tickToPrice(token0, token1, t.tickIdx)
-            const amount0 = parseFloat(price.toSignificant(8))
+            const feeAmount: FeeAmount = poolData?.feeTier
+            const mockTicks = [
+              {
+                index: t.tickIdx - TICK_SPACINGS[feeAmount],
+                liquidityGross: t.liquidityGross,
+                liquidityNet: t.liquidityNet * BigInt('-1'),
+              },
+              {
+                index: t.tickIdx,
+                liquidityGross: t.liquidityGross,
+                liquidityNet: t.liquidityNet,
+              },
+            ]
+            const pool =
+              token0 && token1 && feeTier
+                ? new Pool(token0, token1, feeTier, sqrtPriceX96, t.liquidityActive, t.tickIdx, mockTicks)
+                : undefined
+            const nextSqrtX96 = poolTickData.ticksProcessed[i - 1]
+              ? TickMath.getSqrtRatioAtTick(poolTickData.ticksProcessed[i - 1].tickIdx)
+              : undefined
+            const maxAmountToken0 = token0 ? CurrencyAmount.fromRawAmount(token0, MAX_UINT128) : undefined
+            const outputRes0 =
+              pool && maxAmountToken0 ? await pool.getOutputAmount(maxAmountToken0, nextSqrtX96) : undefined
+
+            const token1Amount = outputRes0?.[0] as CurrencyAmount<Token> | undefined
+
+            const amount0 = token1Amount ? parseFloat(token1Amount.toExact()) * parseFloat(t.price1) : 0
+            const amount1 = token1Amount ? parseFloat(token1Amount.toExact()) : 0
 
             return {
-              activeLiquidity: t.liquidityActive,
-              price0: amount0,
-              price1: 1 / amount0,
-              tvlToken0: t.liquidityActive * amount0,
-              tvlToken1: t.liquidityActive * (1 / amount0),
-              token0: token0,
-              token1: token1,
+              index: i,
               isCurrent: active,
+              activeLiquidity: parseFloat(t.liquidityActive.toString()),
+              price0: parseFloat(t.price0),
+              price1: parseFloat(t.price1),
+              tvlToken0: amount0,
+              tvlToken1: amount1,
             }
           }),
         )
