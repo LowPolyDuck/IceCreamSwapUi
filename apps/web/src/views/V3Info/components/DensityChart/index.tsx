@@ -131,7 +131,7 @@ export default function DensityChart({ address }: DensityChartProps) {
 
             const token1Amount = outputRes0?.[0] as CurrencyAmount<Token> | undefined
 
-            const amount0 = token0 && token1 ? parseFloat(t.price0) : 0
+            const amount0 = token1Amount ? parseFloat(token1Amount.toExact()) * parseFloat(t.price1) : 0
             const amount1 = token1Amount ? parseFloat(token1Amount.toExact()) : 0
 
             return {
