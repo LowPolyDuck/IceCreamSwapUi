@@ -1,11 +1,11 @@
-import { Token } from '@pancakeswap/sdk'
+import { CurrencyAmount, Token } from '@pancakeswap/sdk'
 import { Spinner, Flex } from '@pancakeswap/uikit'
-// import { FeeAmount, Pool, TickMath, TICK_SPACINGS } from '@pancakeswap/v3-sdk'
+import { FeeAmount, Pool, TickMath, TICK_SPACINGS } from '@pancakeswap/v3-sdk'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
 import { styled } from 'styled-components'
 import { isAddress } from 'utils'
-// import { MAX_UINT128 } from '../../constants'
+import { MAX_UINT128 } from '../../constants'
 import { TickProcessed } from '../../data/pool/tickData'
 import { usePoolData, usePoolTickData } from '../../hooks'
 import { DensityChartEntry, PoolData } from '../../types'
@@ -104,20 +104,44 @@ export default function DensityChart({ address }: DensityChartProps) {
         const newData = await Promise.all(
           poolTickData.ticksProcessed.map(async (t: TickProcessed, i) => {
             const active = t.tickIdx === poolTickData.activeTickIdx
-            
-            // Use the pre-calculated prices from TickProcessed
-            const amount0 = parseFloat(t.price0)
-            const amount1 = parseFloat(t.price1)
-            
+            const sqrtPriceX96 = TickMath.getSqrtRatioAtTick(t.tickIdx)
+            const feeAmount: FeeAmount = poolData?.feeTier
+            const mockTicks = [
+              {
+                index: t.tickIdx - TICK_SPACINGS[feeAmount],
+                liquidityGross: t.liquidityGross,
+                liquidityNet: t.liquidityNet * BigInt('-1'),
+              },
+              {
+                index: t.tickIdx,
+                liquidityGross: t.liquidityGross,
+                liquidityNet: t.liquidityNet,
+              },
+            ]
+            const pool =
+              token0 && token1 && feeTier
+                ? new Pool(token0, token1, feeTier, sqrtPriceX96, t.liquidityActive, t.tickIdx, mockTicks)
+                : undefined
+            const nextSqrtX96 = poolTickData.ticksProcessed[i - 1]
+              ? TickMath.getSqrtRatioAtTick(poolTickData.ticksProcessed[i - 1].tickIdx)
+              : undefined
+            const maxAmountToken0 = token0 ? CurrencyAmount.fromRawAmount(token0, MAX_UINT128) : undefined
+            const outputRes0 =
+              pool && maxAmountToken0 ? await pool.getOutputAmount(maxAmountToken0, nextSqrtX96) : undefined
+
+            const token1Amount = outputRes0?.[0] as CurrencyAmount<Token> | undefined
+
+            const amount0 = token1Amount ? parseFloat(token1Amount.toExact()) * parseFloat(t.price1) : 0
+            const amount1 = token1Amount ? parseFloat(token1Amount.toExact()) : 0
+
             return {
-              activeLiquidity: t.liquidityActive,
-              price0: amount0,
-              price1: amount1,
-              tvlToken0: t.liquidityActive * amount0,
-              tvlToken1: t.liquidityActive * amount1,
-              token0,
-              token1,
+              index: i,
               isCurrent: active,
+              activeLiquidity: parseFloat(t.liquidityActive.toString()),
+              price0: parseFloat(t.price0),
+              price1: parseFloat(t.price1),
+              tvlToken0: amount0,
+              tvlToken1: amount1,
             }
           }),
         )
