@@ -125,13 +125,9 @@ export default function DensityChart({ address }: DensityChartProps) {
             const nextSqrtX96 = poolTickData.ticksProcessed[i - 1]
               ? TickMath.getSqrtRatioAtTick(poolTickData.ticksProcessed[i - 1].tickIdx)
               : undefined
-            const standardAmount = CurrencyAmount.fromRawAmount(
-              token0, 
-              // Use 1 full unit of the token (e.g. 1 BTC)
-              BigInt(10 ** token0.decimals)
-            )
+            const maxAmountToken0 = token0 ? CurrencyAmount.fromRawAmount(token0, MAX_UINT128) : undefined
             const outputRes0 =
-              pool && standardAmount ? await pool.getOutputAmount(standardAmount, nextSqrtX96) : undefined
+              pool && maxAmountToken0 ? await pool.getOutputAmount(maxAmountToken0, nextSqrtX96) : undefined
 
             const token1Amount = outputRes0?.[0] as CurrencyAmount<Token> | undefined
 
