@@ -22,7 +22,7 @@ export const MULTI_CHAIN_LIST_URLS: { [chainId: number]: string[] } = {
     'https://tokens.coingecko.com/base/all.json'
   ],
   [ChainId.BOB]: [
-    'https://raw.githubusercontent.com/WilliamPyke/dumpylist/refs/heads/main/dumpylist.json'
+    'https://raw.githubusercontent.com/LowPolyDuck/dumpylist/refs/heads/main/dumpylist.json'
   ],
 }
 
