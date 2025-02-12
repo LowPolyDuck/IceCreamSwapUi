@@ -37,9 +37,9 @@ export const bob: IceChain = {
     name: 'mUSD',
   },
   swap: {
-    factoryAddress: "0x0e04c3D090F9773E7c870b334d083c90032E2D39",
-    initCodeHash: "0x80270ca6ccc4e4b6c6f66549715d994dc493c0a1e540c1a1353c873ac239d7f7",
-    routerAddress: "0xC2E61936a542D78b9c3AA024fA141c4C632DF6c1",
+    factoryAddress: "0xB27fEFF52c463602aA9d939dc090B46439134119",
+    initCodeHash: "0x246ba35fa37fb6bf3b71cd68dd22514e93a5d804976bfd9895b26b4434adb34d",
+    routerAddress: "0xe3eB6Aa5CFB0BdA17C22128A58830EBC8Ecb74C3",
   },
-  smartRouterAddress: '0xF6828fFB3Eea8bf121A2508d723dC85082696C82',
+  smartRouterAddress: '0xf7458e9De34a2B34B48866336F48123F6dE4d303',
 }
